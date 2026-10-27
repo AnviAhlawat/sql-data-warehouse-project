@@ -13,7 +13,7 @@ Warning:
 use master;
 GO
 --Drop and recreate database 'DataWarehouse'
-if exists (select 1 from sys.database where name = 'DataWarehouse')
+if exists (select 1 from sys.databases where name = 'DataWarehouse')
 Begin
     alter database DataWarehouse set single_user with rollback immediate;
     drop database DataWarehouse;
@@ -24,6 +24,7 @@ create database DataWarehouse;
 GO
 
 use DataWarehouse; 
+GO
 
 --create schemas
 
